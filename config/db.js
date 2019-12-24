@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 const config = require("config");
-const db = config.get("mongoURI");
+const db = config.get("offlineMongoURI");
 
 const connectDB = async () => {
   try {
+    console.log('connecting...')
     await mongoose.connect(db, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
