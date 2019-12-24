@@ -12,11 +12,15 @@ const User = require("../models/User");
 router.get(
   "/",
   [
-    check("name", "name is required")
+    check("name", "Please add name")
       .not()
       .isEmpty(),
 
-    check('email', 'Please input a valid mail').isEmail()
+    check("email", "Please include a valid email").isEmail(),
+    check(
+      "password",
+      "Please enter a password with 6 or more characters"
+    ).isLength({ min: 6 })
   ],
   (req, res) => {
     res.send(req.body);
