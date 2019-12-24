@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://jones:jones@contactkeeper-n7gey.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://jones:jones@contactkeeper-n7gey.mongodb.net/test?retryWrites=true&w=majority",
+  "offlineMongoURI": "mongodb://localhost:27017/contact-keeper"
 }
