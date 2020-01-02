@@ -36,42 +36,67 @@ const ContactState = props => {
         phone: "333-333-3333",
         type: "professional"
       }
-    ]
+    ],
+    current: null,
+    filtered: null
   };
 
-  const [state, dispatch] = useReducer(contactReducer, initialState)
+  const [state, dispatch] = useReducer(contactReducer, initialState);
 
   // Add contact
   const addContact = contact => {
     contact.id = uuid.v4();
-    dispatch({type: ADD_CONTACT, payload: contact})
-  }
+    dispatch({ type: ADD_CONTACT, payload: contact });
+  };
 
   // delete contact
   const deleteContact = id => {
-    dispatch({type: DELETE_CONTACT, payload: id})
-  }
+    dispatch({ type: DELETE_CONTACT, payload: id });
+  };
 
   // set current contact
+  const setCurrent = contact => {
+    dispatch({ type: SET_CURRENT, payload: contact });
+  };
 
   // clear current contact
+  const clearCurrent = () => {
+    dispatch({ type: CLEAR_CURRENT });
+  };
 
   // update contact
+  const updateContact = contact => {
+    dispatch({ type: UPDATE_CONTACT, payload: contact });
+  };
 
   // filter contacts
+  const filterContacts = text => {
+    dispatch({ type: FILTER_CONTACTS, payload: text });
+  };
 
   // clear filter
+  const clearFilter = () => {
+    dispatch({ type: CLEAR_FILTER });
+  };
 
   return (
-    <ContactContext.Provider 
-    value={{
-      contacts: state.contacts,
-      addContact,
-      deleteContact
-    }}>
+    <ContactContext.Provider
+      value={{
+        contacts: state.contacts,
+        current: state.current,
+        filtered: state.filtered,
+        addContact,
+        deleteContact,
+        setCurrent,
+        clearCurrent,
+        updateContact,
+        filterContacts,
+        clearFilter
+      }}
+    >
       {props.children}
     </ContactContext.Provider>
-  )
+  );
 };
 
 export default ContactState;
