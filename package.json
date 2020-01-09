@@ -10,7 +10,8 @@
     "server": "nodemon server.js",
     "client": "yarn start --prefix client",
     "clientinstall": "yarn add --prefix client",
-    "dev": "concurrently \"yarn server\" \"yarn client\""
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "heroku-postbuild": "YARN_CONFIG_PRODUCTION=false cd client && yarn && yarn run build"
   },
   "license": "MIT",
   "dependencies": {
