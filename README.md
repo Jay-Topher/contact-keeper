@@ -22,3 +22,5 @@ The app makes use of React's Context API for state management
   - `cd ..`
   - `yarn server`
   
+### To Visit
+Click [here](https://stark-temple-96934.herokuapp.com/), Sign up and manage your contacts.
