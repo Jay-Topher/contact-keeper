@@ -1,5 +1,5 @@
 # contact-keeper
-A contact-app made using MongoDB, Express, React and Node
+A contact-app made using MongoDB, Express, React and Node, and deployed on Heroku.
 
 
 This app has the following features
