@@ -11,3 +11,5 @@ client/.env.production.local
 npm-debug.log*
 yarn-debug.log*
 rarn-error.log*
+
+.env
